@@ -14,7 +14,7 @@
             <form action="index.php">
                 <button class="button1">cancel</button>
             </form>
-            <form id="product_form" action="filler.php" method="post">
+            <form id="product_form" action="test.php" method="post">
                 <input type="submit" value="Save" name="save" id="save"><br>
 
                 <label for="sku">SKU</label>
@@ -26,7 +26,7 @@
                 <label for="price">Price($)</label>
                 <input type="number" name="price" id="price" required> <br>
                 
-                <label for="cat">Type Switcher</label>
+                <label for="productType">Type Switcher</label>
                 
                 <select name="productType" id="productType" onchange="OnSelectionChange(document.getElementById(this.id).value)">
                     <option value="0">DVD</option>
@@ -50,8 +50,8 @@
                             "<p>Enter Furniture dimensions as height, width and length.</p>"
                             ];
                         const lbl = [
-                            "<label for='dvd'>Size(MB) </label> <input type='number' name='dvd' id='dvd' required>",
-                            "<label for='Book'>Weight(Kg) </label> <input type='number' name='book' id='book' required>",
+                            "<label for='size'>Size(MB) </label> <input type='number' name='size' id='size' required>",
+                            "<label for='weight'>Weight(Kg) </label> <input type='number' name='weight' id='weight' required>",
                             "<p id='furniture'><label for='height'>Height(CM) </label> <input type='number' name='height' id='height' required><br>    <label for='width'>Width(CM) </label> <input type='number' name='width' id='width' required><br>     <label for='length'>Length(CM) </label> <input type='number' name='length' id='length' required></p>"
                             ];
                         $("#TypeSize").empty();

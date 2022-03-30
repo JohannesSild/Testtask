@@ -1,5 +1,5 @@
 <?php
-    include 'DB.php';
+    include 'testDB.php';
     //error_reporting(0);
     $conn = $GLOBALS['conn'];
     $productsArray = getProducts($conn);
@@ -34,22 +34,18 @@
         $sql = "DELETE FROM products
         WHERE ID = $del";
         $conn->query($sql);
-        //echo "<p>deleted</p>"."<br>";
     }
 
-    if(isset($_POST["delete"])) {
-        //echo "<p>boop</p>"."<br>";
+    if(isset($_POST["delete-product-btn"])) {
         $toDel = $_POST['del'];
         $toDelete = explode(",", $toDel);
-        //echo gettype($toDelete);
         foreach ($toDelete as $value) {
             delProducts($conn, $value);
         }
-        header("Location: http://localhost/TestTask/index.php");
-        //header("Location: /index.php?");
+        header("Location: https://uninvidious-directi.000webhostapp.com/index.php?"); //live server
+
     }
 
-    //private
     abstract class Product {
         private $sku;
         private $name;
@@ -98,9 +94,8 @@
             VALUES ('$id', '" . $this->getAttr('sku') ."', '" . $this->getAttr('name') ."', '" . $this->getAttr('price') ."', '" . $this->getAttr('type') ."', '" . $this->getAttr('size') ."')";//insert
             
             if ($conn->query($sql) === TRUE) {
-                //echo "New record created successfully";
-                header("Location: http://localhost/TestTask/index.php");
-                //header("Location: https://uninvidious-directi.000webhostapp.com/index.php?");
+                //header("Location: http://localhost/TestTask/index.php"); //local server
+                header("Location: https://uninvidious-directi.000webhostapp.com/index.php?"); //live server
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
@@ -110,14 +105,14 @@
     class dvd extends Post {
         public function __construct($type){
             $this->populate($type);
-            $this->setAttr("size", $_POST["dvd"]);
+            $this->setAttr("size", $_POST["size"]);
         }
     }
 
     class book extends Post {
         public function __construct($type){
             $this->populate($type);
-            $this->setAttr("size", $_POST["book"]);
+            $this->setAttr("size", $_POST["weight"]);
         }
     }
 
@@ -142,18 +137,14 @@
         $results = $conn->query($sql);
         $temp = [];
         if(mysqli_num_rows($results) > 0) {
-            //echo "<br>";
             while ($row = mysqli_fetch_assoc($results)) {
                 $id = json_decode($row['ID']);
                 $temp[$id] = new dbdata($row);
-                //$temp[$id]->render($id);
               }
-        } else {
-            //echo "There's nothing";
         }
         return $temp;
     }
-    //midagi on veel katki
+    
     function renderProducts($productsArray) {
         foreach($productsArray as $key => $oneproduct){
             $oneproduct->render($key);
