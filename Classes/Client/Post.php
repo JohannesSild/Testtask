@@ -19,8 +19,8 @@
             VALUES ('$id', '$product')";//insert
             //VALUES ('$id', '" . $this->getAttr('sku') ."', '" . $this->getAttr('name') ."', '" . $this->getAttr('price') ."', '" . $this->getAttr('type') ."', '" . $this->getAttr('size') ."')";
             if ($conn->query($sql) === TRUE) {
-                header("Location: http://localhost/TestTask/index.php"); //local server
-                //header("Location: https://uninvidious-directi.000webhostapp.com/index.php?"); //live server
+                header("Location: http://localhost/TestTask/index.html"); //local server
+                //header("Location: https://uninvidious-directi.000webhostapp.com/index.html?"); //live server
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }

@@ -30,8 +30,8 @@
         foreach ($toDelete as $value) {
             delProducts($conn, $value);
         }
-        header("Location: http://localhost/TestTask/index.php");
-        //header("Location: https://uninvidious-directi.000webhostapp.com/index.php?"); //live server
+        header("Location: http://localhost/TestTask/index.html");
+        //header("Location: https://uninvidious-directi.000webhostapp.com/index.html?"); //live server
     }
 
     renderProducts($productsArray);
