@@ -14,7 +14,7 @@
             <form action="index.php">
                 <button class="button1">cancel</button>
             </form>
-            <form id="product_form" action="test.php" method="post">
+            <form id="product_form" action="app.php" method="post">
                 <input type="submit" value="Save" name="save" id="save"><br>
 
                 <label for="sku">SKU</label>

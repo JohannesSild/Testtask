@@ -12,7 +12,7 @@
         <form action="addProduct.php">
             <button class="button1">ADD</button>
         </form>
-        <form id="deleteProducts" action="test.php" method="post">
+        <form id="deleteProducts" action="app.php" method="post">
             <input type="submit" class="button2" value="MASS DELETE" name="delete-product-btn" id="delete-product-btn">           
             <input type="hidden" name="del" id="del" value=""> <br>
         </form>
@@ -24,7 +24,7 @@
 
 <script>
     $(document).ready(function() {
-        $("#products").load("test.php", function(){
+        $("#products").load("app.php", function(){
             temp = [];
             del = [];
             $("#delete-product-btn").click(function(){
