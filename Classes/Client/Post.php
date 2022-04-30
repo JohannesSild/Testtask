@@ -15,9 +15,10 @@
 
 
             $conn = $GLOBALS['conn']; 
-            $sql = "INSERT INTO nope (ID, products)
+            //$sql = "INSERT INTO productObj (ID, products)
+            //local testing
+            $sql = "INSERT INTO nope (ID, products) 
             VALUES ('$id', '$product')";//insert
-            //VALUES ('$id', '" . $this->getAttr('sku') ."', '" . $this->getAttr('name') ."', '" . $this->getAttr('price') ."', '" . $this->getAttr('type') ."', '" . $this->getAttr('size') ."')";
             if ($conn->query($sql) === TRUE) {
                 header("Location: http://localhost/TestTask/index.html"); //local server
                 //header("Location: https://uninvidious-directi.000webhostapp.com/index.html?"); //live server

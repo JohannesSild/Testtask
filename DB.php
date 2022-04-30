@@ -9,7 +9,7 @@
   /*
   $servername = "localhost";
   $username = "id17972668_localhost";
-  $password = 'NJ[^94E@rdRs9U+R';
+  $password = '60I\_(ATQ{oO4}V}';
   $dbname = "id17972668_products";
   */
   // Create connection

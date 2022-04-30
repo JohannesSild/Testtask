@@ -11,12 +11,14 @@
     }
 
     function delProducts($conn, $del) {
-        $sql = "DELETE FROM nope
+        //$sql = "DELETE FROM productObj //live server
+        $sql = "DELETE FROM nope 
         WHERE ID = $del";
         $conn->query($sql);
     }
 
     function getProducts($conn) {
+        //$sql = "SELECT * FROM productObj //live server
         $sql = "SELECT * FROM nope";
         $results = $conn->query($sql);
         $temp = [];
